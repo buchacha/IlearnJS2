@@ -1,3 +1,7 @@
-["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
-  alert(`${item} имеет позицию ${index} в ${array}`);
-});
+object = {
+    mama: "Ol",
+    papa: "Val",
+}
+
+mama = 'mama'
+alert(mama in object)
