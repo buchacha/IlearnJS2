@@ -1,14 +1,11 @@
-let arr = ["Я", "изучаю", "JavaScript"];
+let arr = ["Я", {param: "изучаю"}, "JavaScript"];
 
-// с позиции 2
-// удалить 0 элементов
-// вставить "сложный", "язык"
-arr.splice(arr.length, 0, "сложный", "язык");
+let arr_deep_copy = JSON.parse(JSON.stringify(arr));
 
-alert( arr ); // "Я", "изучаю", "сложный", "язык", "JavaScript"
+arr_deep_copy.pop()
 
-let arr2 = ["t", "e", "s", "t"];
+alert(arr_deep_copy)
 
-alert( arr2.slice(-3, -1) ); 
+alert(arr)
 
 
