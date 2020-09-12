@@ -1,11 +1,10 @@
-let arr = ["Я", {param: "изучаю"}, "JavaScript"];
+let arr = [1, 2];
 
-let arr_deep_copy = JSON.parse(JSON.stringify(arr));
+let arrayLike = {
+  0: "что-то",
+  1: "ещё",
+  [Symbol.isConcatSpreadable]: true,
+  length: 2
+};
 
-arr_deep_copy.pop()
-
-alert(arr_deep_copy)
-
-alert(arr)
-
-
+alert( arr.concat(arrayLike) ); // 1,2,что-то,ещё
