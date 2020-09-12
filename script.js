@@ -1,26 +1,14 @@
-function sumInput() {
+let arr = ["Я", "изучаю", "JavaScript"];
 
-  let numbers = [];
+// с позиции 2
+// удалить 0 элементов
+// вставить "сложный", "язык"
+arr.splice(arr.length, 0, "сложный", "язык");
 
-  while (true) {
+alert( arr ); // "Я", "изучаю", "сложный", "язык", "JavaScript"
 
-    let value = prompt("Введите число", 0);
+let arr2 = ["t", "e", "s", "t"];
 
-    // Прекращаем ввод?
-    if (value === "" || value === null || !isFinite(value)) break;
+alert( arr2.slice(-3, -1) ); 
 
-    numbers.push(+value);
-  }
 
-  let sum = 0;
-  for (let number of numbers) {
-    sum += number;
-  }
-  return sum;
-}
-
-alert( sumInput() );
-
-let value = prompt("Введите число", 0);
-
-alert(isFinite(value))
