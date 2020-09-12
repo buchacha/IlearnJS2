@@ -1,17 +1,13 @@
-function unique(arr) {
-  let result = [];
-
-  for (let str of arr) {
-    if (!result.includes(str)) {
-      result.push(str);
-    }
-  }
-
-  return result;
+function filterRange(range, leftBorder, rightBorder) {
+    return range.filter(
+        elem => (leftBorder <= elem && elem <= rightBorder) )
 }
 
-let strings = ["кришна", "кришна", "харе", "харе",
-  "харе", "харе", "кришна", "кришна", ":-O"
-];
 
-alert( unique(strings) ); // кришна, харе, :-O
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+alert( filtered ); // 3,1 (совпадающие значения)
+
+alert( arr ); // 5,3,8,1 (без изменений)
