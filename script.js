@@ -1,9 +1,7 @@
-arr = ["Bilbo", "Gandalf", "Nazgul"]
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
 
-s = arr.forEach((item, index, array) => {
-  alert(`${item} имеет позицию ${index} в ${array}`);
-});
-
-alert(arr) // Bilbo,Gandalf,Nazgul
-
-alert(s) // undefined
+let arr = [1, 2, 3];
+shuffle(arr);
+alert(arr);
