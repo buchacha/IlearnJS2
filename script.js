@@ -1,19 +1,15 @@
-function filterRangeInPlace(arr, a, b) {
-
-  for (let i = 0; i < arr.length; i++) {
-    let val = arr[i];
-
-    // удалить, если за пределами интервала
-    if (val < a || val > b) {
-      arr.splice(i, 1);
-      i--;
-    }
-  }
-
+let man = {
+    age: 13,
+    name: 'egor',
+    height: 189
 }
 
-let arr = [5, 3, 8, 1];
+let numbers = {
+    1: '1',
+    2: '2',
+    3: '3'
+}
 
-filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
-
-alert( arr ); // [3, 1]
+for (idx in numbers) {
+    alert(idx);
+}
