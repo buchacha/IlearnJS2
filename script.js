@@ -1,15 +1,9 @@
-alert([1, -2, 15, 2, 0, 8].sort(function(a, b) {
-  alert( a + " <> " + b );
-})); // выводит что сравнивает но ничего не переставляет
+arr = ["Bilbo", "Gandalf", "Nazgul"]
 
-function compareNumeric(a, b) {
-  return (a > b) ? 1
-  :(a == b) ? 0
-  :-1;
-}
+s = arr.forEach((item, index, array) => {
+  alert(`${item} имеет позицию ${index} в ${array}`);
+});
 
-let arr = [ 1, 2, 15 ];
+alert(arr) // Bilbo,Gandalf,Nazgul
 
-arr.sort(compareNumeric);
-
-alert(arr);  // 1, 2, 15
+alert(s) // undefined
