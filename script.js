@@ -1,15 +1,10 @@
-let man = {
-    age: 13,
-    name: 'egor',
-    height: 189
-}
+let recipeMap = new Map([
+  ["огурец", 500],
+  ["помидор", 350],
+  ["лук",    50]
+]);
 
-let numbers = {
-    1: '1',
-    2: '2',
-    3: '3'
-}
 
-for (idx in numbers) {
-    alert(idx);
+for (elem of recipeMap) {
+    alert(elem[0] + ' ' + elem[1] + ' ' + elem[3]);
 }
