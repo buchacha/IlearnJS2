@@ -1,8 +1,19 @@
-let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+function readData() {
+  let json = '{ "age": 30 }';
 
-let meetup = JSON.parse(str, function(key, value) {
-  if (key == 'date') return new Date(value);
-  return value;
-});
+  try {
+    // ...
+    blabla(); // ошибка!
+  } catch (e) {
+    // ...
+    if (e.name != 'SyntaxError') {
+      throw e; // проброс исключения (не знаю как это обработать)
+    }
+  }
+}
 
-alert( meetup.date.getDate() ); // 30 - теперь работает!
+try {
+  readData();
+} catch (e) {
+  alert( "Внешний catch поймал: " + e ); // поймал!
+}
