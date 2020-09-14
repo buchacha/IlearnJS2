@@ -1,24 +1,34 @@
-let num = +prompt("Введите положительное целое число?", 35)
-
-let diff, result;
-
-function fib(n) {
-  if (n < 0 || Math.trunc(n) != n) {
-    throw new Error("Должно быть целое неотрицательное число");
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
   }
-  return n <= 1 ? n : fib(n - 1) + fib(n - 2);
 }
 
-let start = Date.now();
+// Использование
+function readUser(json) {
+  let user = JSON.parse(json);
+
+  if (!user.age) {
+    throw new ValidationError("Нет поля: age");
+  }
+  if (!user.name) {
+    throw new ValidationError("Нет поля: name");
+  }
+
+  return user;
+}
+
+// Рабочий пример с try..catch
 
 try {
-  result = fib(num);
-} catch (e) {
-  result = 0;
-} finally {
-  diff = Date.now() - start;
+  let user = readUser('{ "age": 25 }');
+} catch (err) {
+  if (err instanceof ValidationError) {
+    alert("Некорректные данные: " + err.message); // Некорректные данные: Нет поля: name
+  } else if (err instanceof SyntaxError) { // (*)
+    alert("JSON Ошибка Синтаксиса: " + err.message);
+  } else {
+    throw err; // неизвестная ошибка, пробросить исключение (**)
+  }
 }
-
-alert(result || "возникла ошибка");
-
-alert( `Выполнение заняло ${diff}ms` );
